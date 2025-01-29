@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mis_peliculas/providers/movies_provider.dart';
-import 'package:mis_peliculas/widgets/widgets.dart';
+import 'package:mis_peliculas/widgets/widgets.dart' show CardSwiper, MovieSlider;
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
             // Tarjetas principales
             CardSwiper( movies: moviesProvider.onDisplayMovies ),
             // Slider de peliculas
-            MovieSlider()
+            MovieSlider( popularMovies: moviesProvider.popularMovies, title: 'Populares' )
           ],
         ),
       ),
