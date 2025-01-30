@@ -1,18 +1,31 @@
 import 'package:flutter/material.dart';
 
 class CastingCards extends StatelessWidget {
+  
+  const CastingCards({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(bottom: 30),
-      width: double.infinity,
-      height: 180,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 10,
-        itemBuilder: ( _ , index) => _CastCard(),
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(left: 25, bottom: 10),
+          child: Text('Reparto', 
+            style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+        ),
+        Container(
+          margin: EdgeInsets.only(bottom: 30),
+          width: double.infinity,
+          height: 180,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: 10,
+            itemBuilder: ( _ , index) => _CastCard(),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -24,7 +37,7 @@ class _CastCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 10),
       width: 110,
-      height: 100,
+      height: 120,
       child: Column(
         children: [
           ClipRRect(

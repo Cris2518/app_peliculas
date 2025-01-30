@@ -24,6 +24,14 @@ class Movie {
       }
     }
 
+    get fullBackDropPath {
+      if (posterPath != null) {
+        return 'https://image.tmdb.org/t/p/w500$backdropPath';
+      } else {
+        return 'https://static.vecteezy.com/system/resources/previews/016/808/173/original/camera-not-allowed-no-photography-image-not-available-concept-icon-in-line-style-design-isolated-on-white-background-editable-stroke-vector.jpg';
+      }
+    }
+
     Movie({
         required this.adult,
         this.backdropPath,
