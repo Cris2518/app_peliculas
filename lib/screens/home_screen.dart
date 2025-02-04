@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mis_peliculas/providers/movies_provider.dart';
+import 'package:mis_peliculas/search/search_delegate.dart';
 import 'package:mis_peliculas/widgets/widgets.dart' show CardSwiper, MovieSlider;
 import 'package:provider/provider.dart';
 
@@ -17,8 +18,11 @@ class HomeScreen extends StatelessWidget {
         title: Text('Peliculas'),
         actions: [
           IconButton(
-            onPressed: () {}, 
-            icon: Icon(Icons.search_rounded)
+            icon: Icon(Icons.search_rounded),
+            onPressed: () => showSearch(
+              context: context, 
+              delegate: MovieSearchDelegate()
+            )
           )
         ],
       ),
